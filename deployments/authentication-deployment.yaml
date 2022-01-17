@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: time-manager-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: authentication-api
+  template:
+    metadata:
+      labels:
+        app: authentication-api
+    spec:
+      containers:
+      - name: authentication-api
+        image: tkaldau/time-manager-authentication:latest
+        resources:
+        ports:
+        - containerPort: 5001
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: authentication
+spec:
+  type: ClusterIP
+  selector:
+    app: authentication
+  ports:
+  - port: 5001
+    targetPort: 5001
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: time-manager-server
+spec:
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 5002
