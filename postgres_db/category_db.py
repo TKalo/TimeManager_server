@@ -1,7 +1,7 @@
 import imp
 import json
 
-from postgres_db.postgres_functions import sql_to_json
+from resources.postgres_functions import sql_to_json
 from ..idb.category_idb import category_idb
 from psycopg2 import Error
 

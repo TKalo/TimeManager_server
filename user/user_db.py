@@ -1,9 +1,8 @@
-from user_idb import user_idb
 from postgres_functions import *
 
 from connection import connect
 
-class user_db(user_idb):
+class user_db():
 
     connection = connect()
 

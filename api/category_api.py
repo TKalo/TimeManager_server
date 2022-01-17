@@ -1,4 +1,4 @@
-from api.authenticate import authenticate
+from resources.authenticate import authenticate
 from flask import Flask, request
 from postgres_db.category_db import *
 

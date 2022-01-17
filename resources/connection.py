@@ -11,7 +11,7 @@ def connect():
     connection = psycopg2.connect(
         host=os.environ.get('host'),
         database=os.environ.get('database'),
-        user=os.environ.get('username'),
+        user=os.environ.get('user'),
         password=os.environ.get('password'),
         sslmode='require'
     )

@@ -1,4 +1,4 @@
-from ..postgres_db.user_db import *
+from ..user.user_db import *
 
 class authenticate:
     db = user_db()
