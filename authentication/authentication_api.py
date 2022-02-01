@@ -1,7 +1,6 @@
 from token_generator import generate_unique_token
 from flask import Flask, request
 from authentication_db import *
-from authenticated import *
 authorizations = []
 
 

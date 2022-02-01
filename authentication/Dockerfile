@@ -9,7 +9,6 @@ RUN pip3 install python-dotenv
 EXPOSE 5001
 
 COPY /resources/connection.py /
-COPY /resources/authenticated.py /
 COPY /resources/postgres_functions.py /
 COPY /authentication/token_generator.py /
 COPY /authentication/authentication_db.py /
